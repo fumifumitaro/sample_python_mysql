@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  app:
+    build: ./docker/python
+    volumes:
+      - ./src:/work
+    working_dir: /work
+  mysql:
+    build: ./docker/mysql
+    ports:
+      - target: 3306
+        published: 3306
+        protocol: tcp
+        mode: host
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
