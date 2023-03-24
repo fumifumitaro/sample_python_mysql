@@ -24,7 +24,7 @@ docker-compose run app bash
 上記状態で立ち上げたMySQLへの接続もできます。
 
 ```shell
-python main_table.py
+python make_table.py
 
 python main.py 1
 ```
