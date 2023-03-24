@@ -38,5 +38,5 @@ Host: localhost
 Port: 3306
 User: user
 Password: password
-Database: dbd
+Database: db
 ```
