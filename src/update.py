@@ -1,8 +1,8 @@
-import mysql.connector
+import MySQLdb
 import sys
 
 # mysql接続用の関数
-connection = mysql.connector.connect(
+connection = MySQLdb.connect(
     host='mysql',
     user='user',
     passwd='password',
@@ -37,5 +37,4 @@ except Exception as e:
 
 # tryでどの場合でも実行される最終的なタスク
 finally:
-    if connection is not None and connection.is_connected():
-        connection.close()
+    connection.close()

@@ -1,4 +1,4 @@
-import mysql.connector
+import MySQLdb
 import sys
 
 # ファイル名の後ろにつけている、1という数字を認識する関数が以下のif文ないです。
@@ -9,12 +9,13 @@ else:
     exit()
 
 # mysql接続用の関数
-connection = mysql.connector.connect(
+connection = MySQLdb.connect(
     host='mysql',
     user='user',
     passwd='password',
     db='db'
 )
+
 
 try:
     # mysqlの接続を開始します。
@@ -41,5 +42,4 @@ except Exception as e:
 
 # tryでどの場合でも実行される最終的なタスク
 finally:
-    if connection is not None and connection.is_connected():
-        connection.close()
+    connection.close()

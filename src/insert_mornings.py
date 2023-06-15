@@ -1,11 +1,12 @@
-import mysql.connector
+import MySQLdb
 
-connection = mysql.connector.connect(
+connection = MySQLdb.connect(
     host='mysql',
     user='user',
     passwd='password',
     db='db'
 )
+
 
 try:
     cursor = connection.cursor()
@@ -29,5 +30,4 @@ except Exception as e:
     print(f"Error Occurred: {e}")
 
 finally:
-    if connection is not None and connection.is_connected():
-        connection.close()
+    connection.close()
